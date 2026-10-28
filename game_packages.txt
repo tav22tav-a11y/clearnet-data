@@ -1,0 +1,11 @@
+com.woodblock.smileg.huawei
+ball.sort.water.puzzle.huawei
+closet.match.pair.matching.games.huawei
+com.color.bolts.sort.nuts.puzzle.huawei
+sortpuz.water.sort.puzzle.game.huawei
+tic.tac.toe.two.player.board.games.huawei
+boyaa.texas.ru.huawei
+com.aiqilin.cubiccombat.huawei
+com.espritgames.rpg.dragon.egg.HUAWEI
+com.huiwan.boardrush.huawei
+com.huohua.bubblesaga.huawei
