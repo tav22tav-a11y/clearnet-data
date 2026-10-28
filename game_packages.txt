@@ -9,3 +9,4 @@ com.aiqilin.cubiccombat.huawei
 com.espritgames.rpg.dragon.egg.HUAWEI
 com.huiwan.boardrush.huawei
 com.huohua.bubblesaga.huawei
+com.axlebolt.standoff2.huawei
