@@ -3,3 +3,8 @@ rayjump.com
 tradplusad.com
 sdkserver-drru.op.dbankcloud.ru
 wolong-hw.oss-eu-central-1.aliyuncs.com
+
+# Bigo Ads regional API: DNS CNAME verified 2026-11-26.
+# api.i9dhjx.ru -> vad-https-api.bytegle.tech (Bigo Ads; Netify, HaGeZi Pro++).
+api.i9dhjx.ru
+vad-https-api.bytegle.tech
