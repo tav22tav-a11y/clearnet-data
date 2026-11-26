@@ -8,3 +8,10 @@ wolong-hw.oss-eu-central-1.aliyuncs.com
 # api.i9dhjx.ru -> vad-https-api.bytegle.tech (Bigo Ads; Netify, HaGeZi Pro++).
 api.i9dhjx.ru
 vad-https-api.bytegle.tech
+
+# Bigo Ads API endpoints: independently classified and listed, verified 2026-11-26.
+# https://www.netify.ai/resources/hostnames/api.bytegle.tech
+# https://www.netify.ai/resources/hostnames/https-api.bytegle.tech
+# Corroboration: HaGeZi wildcard/pro-onlydomains.txt and pro.plus-onlydomains.txt.
+api.bytegle.tech
+https-api.bytegle.tech
