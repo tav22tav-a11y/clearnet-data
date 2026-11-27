@@ -15,3 +15,11 @@ vad-https-api.bytegle.tech
 # Corroboration: HaGeZi wildcard/pro-onlydomains.txt and pro.plus-onlydomains.txt.
 api.bytegle.tech
 https-api.bytegle.tech
+
+# User-requested trial block, 2026-11-27: endpoints observed across multiple games.
+# Advertising-only roles are not independently confirmed; retain precise hostname scope.
+sober.hely.tech
+api.hely.tech
+res.xmoky.tech
+api.fanzz.tech
+nuyila-nvp.maraz.tech
