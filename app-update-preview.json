@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "packageName": "com.clearnet.app.preview",
-  "versionCode": 17,
-  "versionName": "1.2.7-preview-auto",
-  "apkUrl": "https://github.com/tav22tav-a11y/clearnet-data/releases/download/v1.2.7-preview-auto/ClearNet-Preview-1.2.7-auto.apk",
-  "sha256": "40eafb2db521ee8c10c0596ba3da6a790994087648fb8bbc692f64ab53a3b6d0",
-  "sizeBytes": 29858446,
+  "versionCode": 18,
+  "versionName": "1.2.8-preview-auto",
+  "apkUrl": "https://github.com/tav22tav-a11y/clearnet-data/releases/download/v1.2.8-preview-auto/ClearNet-Preview-1.2.8-auto.apk",
+  "sha256": "0f3b43e3854607ef9982f6e4e5338556552be5a60ac41f4149fbde581d271964",
+  "sizeBytes": 29859970,
   "minSdk": 24
 }
