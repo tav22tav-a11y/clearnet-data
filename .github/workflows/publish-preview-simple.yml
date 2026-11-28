@@ -39,9 +39,9 @@ jobs:
           assert "versionName='1.2.14-preview-simple'" in text
           assert 'application-debuggable' not in text
           CHECK
-      - name: Create phone-test release without changing the update manifest
+      - name: Update verified release notes without changing APK or update manifest
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: tav22tav-a11y/clearnet-data
         run: |
-          gh release create v1.2.14-preview-simple ClearNet-Preview-1.2.14-simple.apk SHA256SUMS --title 'ClearNet 1.2.14 — тест упрощённого интерфейса' --notes-file RELEASE_NOTES.txt --target "$GITHUB_SHA" --prerelease
+          gh release edit v1.2.14-preview-simple --notes-file RELEASE_NOTES.txt
