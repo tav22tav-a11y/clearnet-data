@@ -1,0 +1,47 @@
+name: Publish verified ClearNet phone test
+on:
+  push:
+    branches: [publish/preview-simple-24-416c34a]
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.repository == 'tav22tav-a11y/clearnet-data' && github.ref == 'refs/heads/publish/preview-simple-24-416c34a'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Install APK verification tools
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "build-tools;36.0.0" > /dev/null
+      - name: Verify exact signed phone-test APK
+        run: |
+          sha256sum -c SHA256SUMS
+          APK=ClearNet-Preview-1.2.14-simple.apk
+          TOOLS="$ANDROID_HOME/build-tools/36.0.0"
+          "$TOOLS/apksigner" verify --print-certs "$APK" > /tmp/preview-cert.txt
+          grep -q '^Signer #1 certificate SHA-256 digest: 8f6068c4c107519ec0925e4428a2e7781cf27ce98ee0a4e18e469f92c1f3234c$' /tmp/preview-cert.txt
+          "$TOOLS/aapt2" dump badging "$APK" > /tmp/preview-badging.txt
+          python3 - <<'CHECK'
+          from pathlib import Path
+          import hashlib
+          apk=Path('ClearNet-Preview-1.2.14-simple.apk')
+          assert apk.stat().st_size==31767563
+          assert hashlib.sha256(apk.read_bytes()).hexdigest()=='0b02a599c5fd97b3eb1f633095af2406723ff9d3cc8250d5feb257c40b59ea91'
+          text=Path('/tmp/preview-badging.txt').read_text()
+          assert "name='com.clearnet.app.preview' versionCode='24'" in text
+          assert "versionName='1.2.14-preview-simple'" in text
+          assert 'application-debuggable' not in text
+          CHECK
+      - name: Create phone-test release without changing the update manifest
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: tav22tav-a11y/clearnet-data
+        run: |
+          gh release create v1.2.14-preview-simple ClearNet-Preview-1.2.14-simple.apk SHA256SUMS --title 'ClearNet 1.2.14 — тест упрощённого интерфейса' --notes-file RELEASE_NOTES.txt --target "$GITHUB_SHA" --prerelease
